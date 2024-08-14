@@ -1,0 +1,165 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('sahara.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #4a2c2a;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#info-box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(240, 199, 155, 0.9);
+    color: #4a2c2a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 250px;
+    font-size: 0.9em;
+}
+
+#info-box h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+#timer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.2em;
+    color: #4a2c2a;
+    background-color: rgba(240, 199, 155, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#scoreboard {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background-color: rgba(240, 199, 155, 0.9);
+    color: #4a2c2a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 200px;
+    font-size: 0.9em;
+}
+
+#scoreboard h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 10px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #3b3b3b;
+    color: #f0c79b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.card:hover {
+    background-color: #6d6d6d;
+}
+
+.card.flipped {
+    background-color: #f0c79b;
+    color: #3b3b3b;
+    transform: scale(1.1);
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    #info-box, #timer, #scoreboard {
+        max-width: 200px;
+        font-size: 0.8em;
+    }
+
+    #game-board {
+        grid-template-columns: repeat(4, 80px);
+        gap: 8px;
+    }
+
+    .card {
+        width: 80px;
+        height: 80px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #info-box, #timer, #scoreboard {
+        max-width: 150px;
+        font-size: 0.7em;
+    }
+
+    #game-board {
+        grid-template-columns: repeat(4, 70px);
+        gap: 5px;
+    }
+
+    .card {
+        width: 70px;
+        height: 70px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    #info-box, #timer, #scoreboard {
+        max-width: 120px;
+        font-size: 0.6em;
+    }
+
+    #game-board {
+        grid-template-columns: repeat(4, 60px);
+        gap: 4px;
+    }
+
+    .card {
+        width: 60px;
+        height: 60px;
+        font-size: 16px;
+    }
+}
+
